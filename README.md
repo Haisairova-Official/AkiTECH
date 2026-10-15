@@ -2,19 +2,21 @@
 
 秋月重工私营网络安全顾问与系统承包商。以秋月为核心的多人工作室，为个人、学校与小型企业提供技术解决方案与工程实施。
 
-## 本地预览
+纯静态网站，仅使用 HTML、CSS、JavaScript 和 SVG。无需 Python、Node.js、数据库或构建步骤。
 
-无需安装依赖或构建。在仓库目录运行：
+## GitHub Pages 部署
 
-```sh
-python3 -m http.server 4173 --directory dist
-```
+1. 在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**（首次部署设置一次）。
+2. 在 **Actions → Deploy static website to GitHub Pages → Run workflow** 手动运行首次发布。
+3. 此后向 `main` 推送 `dist/` 的修改会自动更新网站。
 
-打开 http://localhost:4173 。
+发布完成后的默认地址：https://haisairova-official.github.io/AkiTECH/
 
-## 部署
+工作流位于 `.github/workflows/pages.yml`，直接将 `dist/` 上传到 GitHub Pages，不安装依赖、不编译网站。资源使用相对路径，兼容 `/AkiTECH/` 子目录。
 
-将 `dist/` 内的全部文件上传到静态网站根目录，入口为 `index.html`。可部署到 Nginx、Caddy 或其他静态托管服务。
+## 本地查看与其他静态托管
+
+下载仓库后，可直接用浏览器打开 `dist/index.html` 查看页面。也可以将 `dist/` 内的全部文件上传到任意静态网站根目录。
 
 ## 页面与交互
 
