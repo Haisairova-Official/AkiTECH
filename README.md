@@ -6,11 +6,13 @@
 
 ## GitHub Pages 部署
 
-1. 在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**（首次部署设置一次）。
-2. 在 **Actions → Deploy static website to GitHub Pages → Run workflow** 手动运行首次发布。
-3. 此后向 `main` 推送 `dist/` 的修改会自动更新网站。
+本仓库已完成 GitHub Pages 首次部署，并沿用现有自定义域名：
 
-发布完成后的默认地址：https://haisairova-official.github.io/AkiTECH/
+**http://akitech.akiacg.com/**
+
+向 `main` 推送 `dist/` 的修改即可自动更新网站。也可在 **Actions → Deploy static website to GitHub Pages → Run workflow** 手动发布。
+
+若复制到其他仓库，首次在 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**，再手动运行工作流即可。未绑定域名时，默认地址为 `https://用户名.github.io/仓库名/`。
 
 工作流位于 `.github/workflows/pages.yml`，直接将 `dist/` 上传到 GitHub Pages，不安装依赖、不编译网站。资源使用相对路径，兼容 `/AkiTECH/` 子目录。
 
